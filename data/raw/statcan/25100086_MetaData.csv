@@ -1,0 +1,89 @@
+﻿"Cube Title","Product Id","CANSIM Id",URL,"Cube Notes","Archive Status",Frequency,"Start Reference Period","End Reference Period","Total number of dimensions"
+"Natural gas supply and disposition, monthly","25100086",,"https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2510008601",1;6,"CURRENT - a cube available to the public and that is current","Monthly","2016-01-01","2026-09-01","3",
+
+"Dimension ID","Dimension name","Dimension Notes","Dimension Definitions"
+"1","Geography",,""
+"2","Supply and disposition",,""
+"3","Unit of measure",,""
+
+"Dimension ID","Member Name","Classification Code","Member ID","Parent Member ID",Terminated,"Member Notes","Member Definitions"
+"1","Canada","[11124]","1","","",,
+"1","Newfoundland and Labrador","[10]","2","1","",,
+"1","Prince Edward Island","[11]","3","1","",,
+"1","Nova Scotia","[12]","4","1","",,
+"1","New Brunswick","[13]","5","1","",,
+"1","Quebec","[24]","6","1","",,
+"1","Ontario","[35]","7","1","",,
+"1","Manitoba","[46]","8","1","",,
+"1","Saskatchewan","[47]","9","1","",,
+"1","Alberta","[48]","10","1","",,
+"1","British Columbia","[59]","11","1","",,
+"1","Northwest Territories","[61]","12","1","",,
+"1","Yukon","[60]","13","1","",,
+"1","Nunavut","[62]","14","1","",,
+"2","Opening inventory, storage","","1","","",,
+"2","Closing  inventory, storage","","2","","",,
+"2","Inventory change, storage","","3","","",,
+"2","Injections to storage, disposition","","4","","",,
+"2","Withdrawals from storage, supply","","5","","",,
+"2","Storage adjustments","","6","","",,
+"2","Gross withdrawals","","7","","",,
+"2","Marketable production, supply","","8","","",2,
+"2","Total imports, supply","","9","","",3,
+"2","Imports from the United States","","10","9","",3,
+"2","Imports from other countries","","11","9","",3,
+"2","Receipts from other provinces, supply","","12","","",7,
+"2","Total exports, disposition","","13","","",5,
+"2","Exports to the United States","","14","13","",5,
+"2","Exports to other countries","","15","13","",5,
+"2","Total deliveries to consumers, disposition","","16","","",,
+"2","Residential consumption","","17","16","",,
+"2","Commercial consumption","","18","16","",,
+"2","Industrial consumption","","19","16","",4,
+"2","Industrial deliveries from transmission pipelines","","20","19","",4,
+"2","Industrial deliveries from distribution pipelines","","21","19","",4,
+"2","Deliveries to other provinces, disposition","","22","","",7,
+"2","Deliveries to natural gas processing plants, disposition","","23","","",,
+"2","Pipeline fuel, disposition","","24","","",,
+"2","Metering differences, line losses and adjustments, disposition","","25","","",,
+"3","Cubic metres","","1","","",,
+"3","Gigajoules","","2","","",,
+"3","Canadian dollars","","3","","",,
+"3","Customers","","4","","",8,
+
+Symbol Legend
+Description,Symbol
+"not available for a specific reference period","..",
+"less than the limit of detection","<LOD",
+"value rounded to 0 (zero) where there is a meaningful distinction between true zero and the value that was rounded","0s",
+"data quality: excellent","A",
+"data quality: very good","B",
+"data quality: good","C",
+"data quality: acceptable","D",
+"use with caution","E",
+"too unreliable to be published","F",
+"not applicable","...",
+"preliminary","p",
+"revised","r",
+"suppressed to meet the confidentiality requirements of the Statistics Act","x",
+"terminated","t",
+
+"Survey Code","Survey Name"
+"5447","Natural gas supply and disposition"
+
+"Subject Code","Subject Name"
+"25","Energy"
+
+"Note ID",Note
+1,"Changes have been made to the content and methodology of the Natural Gas Supply and Disposition table. These new changes have resulted in the creation of table 25-10-0086 by amalgamating 25-10-0057, 25-10-0058, 25-10-0059 and 25-10-0055 alongside the addition of other key variables. The historical tables will remain available but will not be updated for historical revisions as the full series will be maintained with table 25-10-0086."
+2,"Total marketable gas production includes gas received from fields and processing or reprocessing plants after deducting volumes from re-injection, field uses, processing and reprocessing plant shrinkage, plant use and losses."
+3,"Imports include all natural gas and liquefied natural gas (LNG) entering Canada from another country. It may include natural gas exported previously from Canada (ex-transit shipment)."
+4,"Industrial consumption includes all natural gas delivered by pipeline systems to industrial consumers. It excludes natural gas consumed in the natural gas extraction process. It may also exclude associated gas consumed in the extraction of oil and oilsands."
+5,"Exports include all natural gas and liquefied natural gas (LNG) exiting Canadian territory for another country. It may include natural gas previously imported from the United States (in-transit shipment)."
+6,"Totals may not equal the sum of their parts due to the use of conversion factors or rounding of fractions to whole numbers."
+7,"Receipts from and deliveries to other provinces are inter-regional transfers only and do not show the province of origin. These variables have been derived."
+8,"Customer count data were not collected from January 2016 to December 2018, therefore the methodology used in publishing these data differ from the collected data published from January 2019 forward. Data is subject to revision."
+
+"Correction ID","Correction Date","Correction Note"
+"4089","2026-04-22","On April 23, 2026, the unit of measure heading for Cubic Metres was updated to Cubic Metres (x1000). Data for reference month January 2026 was affected.",
+
