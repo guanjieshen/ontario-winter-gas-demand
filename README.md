@@ -24,6 +24,9 @@ It is built as a starter kit for a one-day hackathon: load the CSVs, model deman
 
 HDD here is the Toronto and London average (`avg_toronto_london_hdd`).
 
+> [!TIP]
+> See **[DATASETS.md](DATASETS.md)** for a full guide to each dataset: every column, observed ranges, gotchas, and why it matters for the forecast.
+
 ## Repository layout
 
 | Path | What it holds |
