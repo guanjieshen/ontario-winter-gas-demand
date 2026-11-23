@@ -37,7 +37,8 @@ Teams load the data into Unity Catalog, model demand against cold weather, backt
 1. **Clone** this repo as a Git folder: **Workspace → Create → Git folder**, paste the repo URL.
 2. **Load** the data: open `notebooks/00_setup`, set the `catalog` and `schema` widgets, click **Run all**.
 3. **Explore and model:** run `notebooks/01_explore`, then `notebooks/02_model_and_scenarios` with the same widgets.
-4. **Add the skills to Genie Code:** add the `agents/skills` folder with **Add from workspace folder**, then start a new chat.
+4. **Live forecast (optional):** run `notebooks/03_next_week` to turn this week's ECCC forecast into expected demand. Needs internet access to `dd.weather.gc.ca`.
+5. **Add the skills to Genie Code:** add the `agents/skills` folder with **Add from workspace folder**, then start a new chat.
 
 Serverless compute works for all notebooks. The SQL notebooks also run on a SQL warehouse.
 
@@ -45,7 +46,7 @@ Serverless compute works for all notebooks. The SQL notebooks also run on a SQL 
 
 | Path | What it holds |
 |---|---|
-| `notebooks/` | `00_setup` (load into Unity Catalog), `01_explore`, `02_model_and_scenarios` |
+| `notebooks/` | `00_setup` (load into Unity Catalog), `01_explore`, `02_model_and_scenarios`, `03_next_week` (live forecast) |
 | `agents/skills/` | Genie Code skills (see below) |
 | `docs/` | Genie space and dashboard specs |
 | `data/processed/` | Tidy Ontario CSVs that the setup notebook loads |
@@ -58,7 +59,7 @@ Serverless compute works for all notebooks. The SQL notebooks also run on a SQL 
 |---|---|
 | `winter-gas-data` | Load the tables and explain columns, units and gotchas |
 | `demand-weather-model` | Fit, explain and backtest the demand vs. weather model |
-| `winter-scenarios` | Forecast normal, cold and mild winters, compare with `ai_forecast`, and give a storage outlook |
+| `winter-scenarios` | Forecast normal, cold and mild winters, the coming week from the live forecast, compare with `ai_forecast`, and give a storage outlook |
 | `winter-dashboard` | Build the Ontario Winter Gas Outlook dashboard |
 | `winter-genie-space` | Create and tune the Winter Gas Demand Assistant Genie space |
 

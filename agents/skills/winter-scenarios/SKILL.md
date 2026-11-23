@@ -1,11 +1,11 @@
 ---
 name: winter-scenarios
-description: Forecast Ontario winter gas demand under weather scenarios (normal, cold, mild, X% colder), compare with ai_forecast, and give a directional storage outlook. Use when the user asks what happens if the winter is colder or milder, wants a forecast for the coming winter, or asks whether storage is enough.
+description: Forecast Ontario winter gas demand under weather scenarios (normal, cold, mild, X% colder) and for the coming week from the live ECCC forecast, compare with ai_forecast, and give a directional storage outlook. Use when the user asks what happens if the winter is colder or milder, wants a forecast for this winter or this week, or asks whether storage is enough.
 ---
 
 # Winter scenarios
 
-Requires the `demand_model` table (see the `demand-weather-model` skill). The notebook `notebooks/02_model_and_scenarios` creates `winter_scenarios`.
+Requires the `demand_model` table (see the `demand-weather-model` skill). The notebook `notebooks/02_model_and_scenarios` creates `winter_scenarios`; `notebooks/03_next_week` creates `demand_next_week`.
 
 ## 1. Build scenarios from past winters
 
@@ -47,7 +47,29 @@ FROM ai_forecast(
 
 Requires a SQL warehouse (Pro or Serverless) or serverless compute.
 
-## 3. Storage outlook (directional only)
+## 3. The coming week from the live forecast
+
+Run `notebooks/03_next_week`. It fetches the latest ECCC city forecasts for Toronto and London, averages their HDD, and writes:
+
+- `weather_forecast`: every forecast fetched (appended on each run, so it builds a forecast history)
+- `demand_next_week`: expected residential use per day vs. normal weather for the same dates
+
+Daily use per customer = `base_m3_per_customer / days in month + m3_per_customer_per_hdd × daily HDD`. Daily mean temperature = (high + following night's low) / 2. The forecast covers today plus five days.
+
+Weekly summary:
+
+```sql
+SELECT MIN(forecast_date) AS from_date, MAX(forecast_date) AS to_date,
+       ROUND(SUM(residential_million_m3), 0) AS expected_million_m3,
+       ROUND(100 * (SUM(residential_million_m3) / SUM(normal_million_m3) - 1), 1) AS vs_normal_pct
+FROM demand_next_week
+```
+
+The numbers change with every forecast, so there is no fixed expected result. Check that `hdd` is roughly 10 to 25 per day in late November, and higher in January.
+
+If the fetch fails, the compute probably cannot reach `dd.weather.gc.ca`; ask the workspace admin to allow it.
+
+## 4. Storage outlook (directional only)
 
 Storage covers the gap between winter demand and pipeline supply. Useful facts from `gas_monthly`:
 

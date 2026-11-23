@@ -263,6 +263,23 @@ The coldest day in the file is 30 Jan 2019 in Windsor, with a mean temperature o
 
 **Watch out for:** blank rows for future dates in the current year's files, and older files that may use latin-1 text encoding.
 
+## Live forecast (optional)
+
+`notebooks/03_next_week` fetches the latest **ECCC city forecasts** for Toronto (site `s0000458`) and London (site `s0000326`) from the [MSC Datamart](https://dd.weather.gc.ca/today/citypage_weather/ON/). Same source and licence as the observed weather.
+
+| Table | One row is | Notes |
+|---|---|---|
+| `weather_forecast` | One city, one forecast day, one issue | `issued_at`, `city`, `forecast_date`, `high_c`, `low_c`, `mean_c`, `hdd`, `fetched_at`. **Appended on every run.** |
+| `demand_next_week` | One forecast day | Expected residential use vs. normal weather for the latest forecast |
+
+**Why it matters for the use case:** it turns the model into a live tool. A planner sees expected demand for the coming week, compared with normal, without waiting for the monthly StatCan data.
+
+**Watch out for:**
+- **Only about six days.** The forecast covers today plus five days. ECCC's seventh day has a high but no overnight low, so it is dropped.
+- **Daily mean is estimated** as (daytime high + following night's low) / 2.
+- **No forecast archive.** ECCC keeps only about the last month on the Datamart, so `weather_forecast` only holds forecasts you have fetched yourself.
+- **Needs internet access** from your compute to `dd.weather.gc.ca`.
+
 ## Questions to try
 
 | Question | Files |

@@ -58,6 +58,7 @@ Full column guide: [DATASETS.md](DATASETS.md).
 | Idea | Hint |
 |---|---|
 | **Beat the straight line** | Ask Genie Code to train an ML model (for example gradient boosting with month-of-year) and compare its backtest error with the simple model. |
+| **The coming week, live** | Run `notebooks/03_next_week`: it pulls today's ECCC forecast for Toronto and London and shows expected demand for each day vs. normal. Run it again tomorrow; each run is saved, so you start building your own forecast history. |
 | **Weather vs. no weather** | Run `ai_forecast` on `residential_e3m3` and compare it with the weather model. Which handles a cold January better? |
 | **Your own scenario** | "What if this January is as cold as January 2022?" Build it from `hdd_monthly`. |
 | **Storage outlook** | Estimate how much the extra cold-winter demand would draw storage down, against past winters. Label it directional. |
@@ -83,7 +84,7 @@ Expected answers are in [docs/genie_space.md](docs/genie_space.md).
 | **Problem** | Heating demand follows the weather, and a cold winter strains supply and storage. |
 | **Insight** | The scatter chart: weather explains about 98% of monthly residential use per customer. |
 | **Proof** | The backtest: last winter predicted within a few percent from weather alone. |
-| **Action** | The scenarios: a cold winter needs about 16% more gas than a normal one. Ask the Genie space a live "what if" question. |
+| **Action** | The scenarios: a cold winter needs about 16% more gas than a normal one. Ask the Genie space a live "what if" question, or show this week's forecast turned into expected demand. |
 | **Impact** | Plan supply and storage before winter starts. Next step: run the same model on our own daily data. |
 
 ## Judging tips

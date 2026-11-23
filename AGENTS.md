@@ -15,7 +15,7 @@ A one-day hackathon kit: public Ontario gas demand and weather data, Databricks 
 | `data/raw/` | Source files as published. Do not edit by hand. |
 | `data/processed/` | Tidy Ontario CSVs, built by `scripts/build_processed.py` |
 | `scripts/` | `download_raw.py` (fetch sources), `build_processed.py` (rebuild CSVs). Python standard library only. |
-| `notebooks/` | `00_setup` (load to Unity Catalog), `01_explore`, `02_model_and_scenarios` |
+| `notebooks/` | `00_setup` (load to Unity Catalog), `01_explore`, `02_model_and_scenarios`, `03_next_week` (live forecast) |
 | `docs/` | `genie_space.md`, `dashboard.md`: ready-to-use configs |
 | `agents/skills/` | Genie Code skills, one folder per skill with a `SKILL.md` |
 
@@ -25,7 +25,7 @@ A one-day hackathon kit: public Ontario gas demand and weather data, Databricks 
 2. **Never invent numbers.** Every figure in the docs and skills must come from running a query on the data. If you change data or logic, rerun the queries and update the figures.
 3. **Keep it generic.** No company names or internal references. The data is province-wide public data; say so wherever forecasts are shown.
 4. **Respect the data gotchas.** Per-customer values start in 2019-01; use one unit per query; `avg_toronto_london_hdd` is the default weather driver. See `agents/skills/winter-gas-data/SKILL.md`.
-5. **Test on Databricks before you push.** Run the three notebooks end to end, plus every SQL block in `docs/`.
+5. **Test on Databricks before you push.** Run the notebooks end to end, plus every SQL block in `docs/`. `03_next_week` uses live data, so check it runs and the numbers look sensible rather than matching fixed figures.
 6. **Keep the licences.** Keep the StatCan and ECCC attribution in `README.md` and `DATASETS.md`.
 
 ## Where the hard-coded figures live
