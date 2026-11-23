@@ -6,7 +6,7 @@
 # MAGIC
 # MAGIC | Table | What it holds |
 # MAGIC |---|---|
-# MAGIC | `weather_forecast` | Every forecast fetched. Each run **appends**, so you build up your own forecast history. |
+# MAGIC | `weather_forecast` | Every forecast fetched. Each run adds any new forecast, so you build up your own forecast history. |
 # MAGIC | `demand_next_week` | Expected demand for the latest forecast, day by day, vs. normal |
 # MAGIC
 # MAGIC Run `00_setup` and `02_model_and_scenarios` first. This notebook needs internet access to `dd.weather.gc.ca`.
@@ -103,8 +103,18 @@ for city, code in CITIES.items():
 
 forecast = spark.createDataFrame(rows).selectExpr(
     "issued_at", "city", "forecast_date", "high_c", "low_c", "mean_c", "hdd", "current_timestamp() AS fetched_at")
-forecast.write.mode("append").saveAsTable("weather_forecast")
-spark.sql("COMMENT ON TABLE weather_forecast IS 'ECCC city forecasts for Toronto and London, one row per city per forecast day per issue. Appended on every run of notebook 03, so it builds a forecast history. HDD = max(0, 18 - (high + low) / 2)'")
+if spark.catalog.tableExists("weather_forecast"):
+    # Add only forecasts not already saved, so re-running before ECCC issues a new one adds nothing.
+    forecast.createOrReplaceTempView("new_forecast")
+    spark.sql("""
+      MERGE INTO weather_forecast t
+      USING new_forecast s
+      ON t.issued_at = s.issued_at AND t.city = s.city AND t.forecast_date = s.forecast_date
+      WHEN NOT MATCHED THEN INSERT *
+    """)
+else:
+    forecast.write.saveAsTable("weather_forecast")
+spark.sql("COMMENT ON TABLE weather_forecast IS 'ECCC city forecasts for Toronto and London, one row per city per forecast day per issue. New forecasts are added on every run of notebook 03, so it builds a forecast history. HDD = max(0, 18 - (high + low) / 2)'")
 display(forecast)
 
 # COMMAND ----------

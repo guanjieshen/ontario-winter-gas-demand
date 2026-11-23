@@ -51,7 +51,7 @@ Requires a SQL warehouse (Pro or Serverless) or serverless compute.
 
 Run `notebooks/03_next_week`. It fetches the latest ECCC city forecasts for Toronto and London, averages their HDD, and writes:
 
-- `weather_forecast`: every forecast fetched (appended on each run, so it builds a forecast history)
+- `weather_forecast`: every forecast fetched (new forecasts are added on each run, so it builds a forecast history)
 - `demand_next_week`: expected residential use per day vs. normal weather for the same dates
 
 Daily use per customer = `base_m3_per_customer / days in month + m3_per_customer_per_hdd × daily HDD`. Daily mean temperature = (high + following night's low) / 2. The forecast covers today plus five days.

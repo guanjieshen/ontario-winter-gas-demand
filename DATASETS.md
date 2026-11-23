@@ -269,7 +269,7 @@ The coldest day in the file is 30 Jan 2019 in Windsor, with a mean temperature o
 
 | Table | One row is | Notes |
 |---|---|---|
-| `weather_forecast` | One city, one forecast day, one issue | `issued_at`, `city`, `forecast_date`, `high_c`, `low_c`, `mean_c`, `hdd`, `fetched_at`. **Appended on every run.** |
+| `weather_forecast` | One city, one forecast day, one issue | `issued_at`, `city`, `forecast_date`, `high_c`, `low_c`, `mean_c`, `hdd`, `fetched_at`. **New forecasts are added on every run; re-runs do not duplicate.** |
 | `demand_next_week` | One forecast day | Expected residential use vs. normal weather for the latest forecast |
 
 **Why it matters for the use case:** it turns the model into a live tool. A planner sees expected demand for the coming week, compared with normal, without waiting for the monthly StatCan data.
