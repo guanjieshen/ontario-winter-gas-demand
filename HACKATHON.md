@@ -41,7 +41,7 @@ Full column guide: [DATASETS.md](DATASETS.md).
 3. **Turn on the skills (optional, recommended).** In Genie Code, add the repo's `agents/skills` folder as a skills folder (**Add from workspace folder**). Genie Code then knows the data, the gotchas and each build step. Start a new chat after adding them.
 
 > [!TIP]
-> **Not sure what to type?** Copy a starter prompt from [PROMPTS.md](PROMPTS.md) into Genie Code.
+> **Not sure what to type?** Copy a starter prompt from [PROMPTS.md](PROMPTS.md) into Genie One or Genie Code.
 
 ## Build it step by step
 
