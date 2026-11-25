@@ -306,3 +306,5 @@ Share these links in place of "the link your facilitator shares", and test them 
 | Genie Code, full screen | `https://<workspace-host>/editor/folders/workspace?o=<workspace-id>&mode=chat` |
 
 Also tell participants which compute or SQL warehouse to pick, and confirm they can create tables, dashboards and Genie Agents in their team's area.
+
+Before the event, run the 45-minute [dry-run checklist](docs/prompt_dry_run.md) to check every prompt in the real Genie One and Genie Code.

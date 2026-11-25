@@ -17,7 +17,7 @@ A one-day hackathon kit: public Ontario gas demand and weather data, Databricks 
 | `data/processed/` | Tidy Ontario CSVs, built by `scripts/build_processed.py` |
 | `scripts/` | `download_raw.py` (fetch sources), `build_processed.py` (rebuild CSVs). Python standard library only. |
 | `notebooks/` | `00_setup` (load to Unity Catalog), `01_explore`, `02_model_and_scenarios`, `03_next_week` (live forecast) |
-| `docs/` | `genie_space.md`, `dashboard.md`: ready-to-use configs |
+| `docs/` | `genie_space.md`, `dashboard.md`: ready-to-use configs. `prompt_dry_run.md`: facilitator checklist for testing PROMPTS.md |
 | `agents/skills/` | Genie Code skills, one folder per skill with a `SKILL.md` |
 
 ## Rules
