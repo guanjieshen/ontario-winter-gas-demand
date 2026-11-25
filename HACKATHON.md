@@ -40,6 +40,9 @@ Full column guide: [DATASETS.md](DATASETS.md).
 2. **Load the data.** Open `notebooks/00_setup`, set `catalog` and `schema` to your team schema, and click **Run all**. Your facilitator may have done this already; if so, use their shared schema.
 3. **Turn on the skills (optional, recommended).** In Genie Code, add the repo's `agents/skills` folder as a skills folder (**Add from workspace folder**). Genie Code then knows the data, the gotchas and each build step. Start a new chat after adding them.
 
+> [!TIP]
+> **Not sure what to type?** Copy a starter prompt from [PROMPTS.md](PROMPTS.md) into Genie Code.
+
 ## Build it step by step
 
 ### Core path (everyone)

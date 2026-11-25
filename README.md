@@ -27,6 +27,7 @@ Teams load the data into Unity Catalog, model demand against cold weather, backt
 | If you are | Read |
 |---|---|
 | A participant | **[HACKATHON.md](HACKATHON.md)**: the problem, step-by-step build and demo story |
+| Not sure what to ask | **[PROMPTS.md](PROMPTS.md)**: starter prompts to copy into Genie Code |
 | Looking for column definitions | **[DATASETS.md](DATASETS.md)**: every dataset and column, with gotchas |
 | Building the Genie space | **[docs/genie_space.md](docs/genie_space.md)**: instructions, example SQL, test questions |
 | Building the dashboard | **[docs/dashboard.md](docs/dashboard.md)**: datasets and widgets |
