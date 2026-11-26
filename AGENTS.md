@@ -13,7 +13,7 @@ A one-day hackathon kit: public Ontario gas demand and weather data, Databricks 
 | `HACKATHON.md` | Participant brief: problem, steps, demo story |
 | `DATASETS.md` | Column-by-column data guide |
 | `PROMPTS.md` | Generic starter prompts for Genie One and Genie Code, for any project (no blanks to fill in). Tested on a live workspace. |
-| `ADVANCED_PROMPTS.md` | Advanced prompts for building a Databricks App (SQL warehouse + Lakebase): rules file, spec, slices, review, demo. Not yet dry-run tested. |
+| `ADVANCED_PROMPTS.md` | Advanced Genie Code prompts that follow the hackathon day and judging criteria (plan, trusted table, AI Functions, PDFs, prediction, Genie Agent benchmarks, judge scorecard, demo; Databricks App + Lakebase as stretch). Not yet dry-run tested. |
 | `data/raw/` | Source files as published. Do not edit by hand. |
 | `data/processed/` | Tidy Ontario CSVs, built by `scripts/build_processed.py` |
 | `scripts/` | `download_raw.py` (fetch sources), `build_processed.py` (rebuild CSVs). Python standard library only. |
