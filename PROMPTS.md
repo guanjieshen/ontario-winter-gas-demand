@@ -274,6 +274,10 @@ Pretend you're a hackathon judge. Ask me the 5 hardest questions about my projec
 
 ---
 
+Ready to build an app? See the **[advanced prompts](ADVANCED_PROMPTS.md)**.
+
+---
+
 ## Phrases that keep the conversation going
 
 | Say this | When |
